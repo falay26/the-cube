@@ -7,6 +7,7 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
+  "description": "My cube project",
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.13.2",
     "@react-native-community/masked-view": "0.1.10",
