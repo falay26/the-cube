@@ -5,6 +5,7 @@ import MainScreen from './screens/MainScreen'
 import LevelsScreen from './screens/LevelsScreen'
 import LevelScreen from './screens/LevelScreen'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { StatusBar } from 'expo-status-bar';
 
 import { levelsconstants } from './constants/levelsconstants'
 
@@ -14,32 +15,35 @@ const Stack = createStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Main"
-        component={MainScreen}
-        options={{
-          headerShown: false,
-          animationEnabled: false,
-        }}
-      />
-      <Stack.Screen
-        name="Levels"
-        component={LevelsScreen}
-        options={{
-          headerShown: false,
-          animationEnabled: false,
-        }}
-      />
-      <Stack.Screen
-        name="Level"
-        component={LevelScreen}
-        options={{
-          headerShown: false,
-          animationEnabled: false,
-        }}
-      />
-    </Stack.Navigator>
+    <>
+      <StatusBar hidden={true} />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Main"
+          component={MainScreen}
+          options={{
+            headerShown: false,
+            animationEnabled: false,
+          }}
+        />
+        <Stack.Screen
+          name="Levels"
+          component={LevelsScreen}
+          options={{
+            headerShown: false,
+            animationEnabled: false,
+          }}
+        />
+        <Stack.Screen
+          name="Level"
+          component={LevelScreen}
+          options={{
+            headerShown: false,
+            animationEnabled: false,
+          }}
+        />
+      </Stack.Navigator>
+    </>
   );
 }
 

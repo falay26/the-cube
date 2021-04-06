@@ -26,7 +26,7 @@ export default function LevelsScreen({ navigation }) {
     }
   )
   const insets = useSafeAreaInsets()
-  const sizeOfSI = (windowWidth * 8 / 3)//Tamam
+  const sizeOfSI = (windowWidth * 8 / 3)
   const animationDuration = 1000
   const topOfSI = useRef(new Animated.Value((-(sizeOfSI - 30) / 2) + 10)).current
   const leftOfSI = useRef(new Animated.Value((-(sizeOfSI - 30) / 2) + windowWidth - 40)).current
@@ -88,16 +88,10 @@ export default function LevelsScreen({ navigation }) {
 
   return (
     <React.Fragment>
-      <SafeAreaView
-        style={styles.topsafe}
-      >
+      <SafeAreaView style={styles.topsafe}>
       </SafeAreaView>
-      <SafeAreaView
-        style={styles.mainsafe}
-      >
-        <View
-          style={styles.mainview}
-        >
+      <SafeAreaView style={styles.mainsafe}>
+        <View style={styles.mainview}>
           <Settings
             settingsVisibility={settingsVisibility}
             sizeOfSI={sizeOfSI}
@@ -131,12 +125,8 @@ export default function LevelsScreen({ navigation }) {
             duration={2000}
             style={styles.animatableview1}
           />
-          <View
-            style={styles.view1}
-          >
-            <Text
-              style={styles.levelstext}
-            >
+          <View style={styles.view1}>
+            <Text style={styles.levelstext}>
               LEVELS
             </Text>
           </View>
@@ -157,6 +147,7 @@ export default function LevelsScreen({ navigation }) {
                   return (
                     <TouchableWithoutFeedback
                       key={levelsitem.levelnumber}
+                      style={{zIndex: 200}}
                       onPress={
                         () => {
                           if (levelsitem.isWon === true || levelsitem.currentLevel === true) {
@@ -173,7 +164,7 @@ export default function LevelsScreen({ navigation }) {
                             setSettingsVisibility(false)
                           }
                           else {
-                            alert(levelsitem.goToScreen + " is locked!")
+                            alert("Level " + levelsitem.levelnumber + " is locked!")
                           }
                         }
                       }
@@ -334,6 +325,7 @@ const styles = StyleSheet.create({
   },
   mainview: {
     flex: 1,
+    overflow: 'visible',
   },
   animatableview1: {
     justifyContent: 'center',
@@ -352,7 +344,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 50,
     width: Dimensions.get('window').width,
-    zIndex: 0,
+    zIndex: 1,
   },
   levelstext: {
     textAlign: 'center',
@@ -371,6 +363,7 @@ const styles = StyleSheet.create({
     paddingBottom: Dimensions.get('window').width * (0.02),
     flexWrap: 'wrap',
     zIndex: 1,
+    overflow: 'visible',
   },
   animatableview2: {
     width: Dimensions.get('window').width * (0.225),
