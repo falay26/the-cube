@@ -16,41 +16,43 @@ function MyStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-      name="Main"
-      component={MainScreen}
-      options={{
-        headerShown:false,
-        animationEnabled:false,
-      }}
+        name="Main"
+        component={MainScreen}
+        options={{
+          headerShown: false,
+          animationEnabled: false,
+        }}
       />
       <Stack.Screen
-      name="Levels"
-      component={LevelsScreen}
-      options={{
-        headerShown: false,
-        animationEnabled:false,
-      }}
+        name="Levels"
+        component={LevelsScreen}
+        options={{
+          headerShown: false,
+          animationEnabled: false,
+        }}
       />
       <Stack.Screen
-      name="Level"
-      component={LevelScreen}
-      options={{
-        headerShown: false,
-        animationEnabled:false,
-      }}
+        name="Level"
+        component={LevelScreen}
+        options={{
+          headerShown: false,
+          animationEnabled: false,
+        }}
       />
     </Stack.Navigator>
   );
 }
 
 export default function App() {
-  //useEffect(() => {
-  //  asyncSave.read().then((data) => {
-  //    for (let i = 0; i < data.length; i++) {
-  //      levelsconstants[i] = data[i]
-  //    }
-  //  })
-  //})
+  /*
+  useEffect(() => {
+    asyncSave.read().then((data) => {
+      for (let i = 0; i < data.length; i++) {
+        levelsconstants[i] = data[i]
+      }
+    })
+  })
+  */
   return (
     <NavigationContainer>
       <MyStack />

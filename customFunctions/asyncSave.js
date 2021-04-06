@@ -13,7 +13,7 @@ class Save {
     try {
       const jsonValue = await AsyncStorage.getItem('@levelsconstans')
       return jsonValue != null ? JSON.parse(jsonValue) : null;
-    } catch(e) {
+    } catch (e) {
       console.log("Readlerken sıkıntı oldu be abi = " + e)
     }
   }
